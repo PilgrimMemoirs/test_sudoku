@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Sudoku </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+ <link rel="stylesheet" href="style.css">
+
+<div class="container">
+  <h2><strong> Sudoku </strong></h2>          
+  <table class="">
+
+        <tr>
+        <td class= "left_top">3</td>
+        <td class= "right_top">4</td>
+        <td class= "left_top">1</td>
+        <td class= "right_top"><%= @game.b2 %></td>
+      </tr>
+      <tr>
+        <td class= "left"><%= @game.a3 %></td>
+        <td >2</td>
+        <td class= "left"><%= @game.b3 %></td>
+        <td class= "right"><%= @game.b4 %></td>
+      </tr>
+      <tr>
+        <td class= "left_top"><%= @game.c1 %></td>
+        <td class= "right_top"><%= @game.c2 %></td>
+        <td class= "left_top">2</td>
+        <td class= "right_top"><%= @game.d2 %></td>
+      </tr>
+      <tr>
+        <td class= "left_bottom"><%= @game.c3 %></td>
+        <td class= "bottom">1</td>
+        <td class= "left_bottom">4</td>
+        <td class= "bottom_right">3</td>
+      </tr>
+  </table>
+</div>
+
+
+  <form method= "POST" action="/">
+<select name= "cell" >
+  <option value= <%= @game.b2 %> > b2 </option>
+  <option value= <%= @game.a3 %> > a3 </option>
+  <option value= <%= @game.b3 %> > b3 </option>
+  <option value= <%= @game.b4 %> > b4 </option>
+  <option value= <%= @game.c1 %> > c1 </option>
+  <option value= <%= @game.c2 %> > c2 </option>
+  <option value= <%= @game.d2 %> > d2 </option>
+  <option value= <%= @game.c3 %> > c3 </option>
+
+</select>
+
+  <form method= "POST" action="/">
+<select name= "number" >
+  <option value="one" > 1 </option>
+  <option value="two" > 2 </option>
+  <option value="three" > 3 </option>
+  <option value="four" > 4 </option>
+
+</select>
+<br><br>
+<input type="submit">
+</form>
+
+<p align=center><strong> <%= @game.result %> </strong>
+  <% if @game.imagesource %>
+  <img src=<%= @game.imagesource %> > 
+  <% end %>
+
+</body>
+</html>
